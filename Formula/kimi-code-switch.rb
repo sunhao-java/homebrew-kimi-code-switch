@@ -1,15 +1,15 @@
 class KimiCodeSwitch < Formula
   desc "Terminal UI for managing kimi-code-cli providers, models, and profiles"
   homepage "https://github.com/sunhao-java/kimi-code-switch"
-  version "1.0.2"
+  version "1.0.3"
 
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/sunhao-java/kimi-code-switch/releases/download/v#{version}/kimi-code-switch-v#{version}-macos-arm64.tar.gz"
-      sha256 "c7f927a67ef01c0a563fbc1b515a75e32ede2a451c8d9d9663963dad5bd9b527"
+      sha256 "af56d25929725acd67e0d4dcc091bee2d62f08ffcf11751812d222159f241712"
     else
       url "https://github.com/sunhao-java/kimi-code-switch/releases/download/v#{version}/kimi-code-switch-v#{version}-macos-amd64.tar.gz"
-      sha256 "d893680ebf90adec342cbdb429918afca2499890b7e6d998733b469b7336a971"
+      sha256 "1518490ce79b97a758a1d92258987a944ecf5e04f7109e5f80797ebbf90e34e8"
     end
   end
 
