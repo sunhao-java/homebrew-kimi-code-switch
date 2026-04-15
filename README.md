@@ -4,10 +4,10 @@
 
 ## 安装
 
-由于仓库目前托管在 GitLab，请使用自定义 remote 方式 tap：
+仓库当前托管在 GitHub，请使用自定义 remote 方式 tap：
 
 ```bash
-brew tap tools/kimi-code-switch ssh://git@gitlab.lodsve.com:9001/tools/homebrew-kimi-code-switch.git
+brew tap tools/kimi-code-switch git@github.com:sunhao-java/homebrew-kimi-code-switch.git
 brew install tools/kimi-code-switch/kimi-code-switch
 ```
 
