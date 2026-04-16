@@ -7,21 +7,28 @@
 仓库当前托管在 GitHub，请使用自定义 remote 方式 tap：
 
 ```bash
-brew tap tools/kimi-code-switch git@github.com:sunhao-java/homebrew-kimi-code-switch.git
-brew install tools/kimi-code-switch/kimi-code-switch
+brew tap sunhaojava/kimi-code-switch git@github.com:sunhao-java/homebrew-kimi-code-switch.git
+brew install kimi-code-switch
 ```
 
 安装完成后可直接运行：
 
 ```bash
-kimi-config-panel
+kimi-config-switch
 ```
 
 ## 更新
 
 ```bash
 brew update
-brew upgrade tools/kimi-code-switch/kimi-code-switch
+brew upgrade kimi-code-switch
+```
+
+如已使用旧 alias 安装过 tap，可先移除旧 alias 后重新 tap：
+
+```bash
+brew untap tools/kimi-code-switch
+brew tap sunhaojava/kimi-code-switch git@github.com:sunhao-java/homebrew-kimi-code-switch.git
 ```
 
 ## 说明
