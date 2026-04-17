@@ -1,38 +1,86 @@
 # homebrew-kimi-code-switch
 
-`kimi-code-switch` 的 Homebrew tap 仓库。
+`kimi-code-switch` 的 Homebrew Tap 仓库，用于通过 Homebrew 安装和更新 `kimi-code-switch` 命令行工具。
+
+## 简介
+
+`kimi-code-switch` 是一个终端交互工具，用于管理 `kimi-code-cli` 的 provider、model 和 profile 配置。
+
+本仓库只维护 Homebrew Formula，不包含上游工具源码。实际安装内容来自上游仓库发布的 GitHub Release 压缩包。
 
 ## 安装
 
-仓库当前托管在 GitHub，请使用自定义 remote 方式 tap：
+先添加 Tap：
 
 ```bash
-brew tap sunhaojava/kimi-code-switch git@github.com:sunhao-java/homebrew-kimi-code-switch.git
+brew tap sunhaojava/kimi-code-switch https://github.com/sunhao-java/homebrew-kimi-code-switch.git
+```
+
+再安装：
+
+```bash
 brew install kimi-code-switch
 ```
 
-安装完成后可直接运行：
+安装完成后，可通过以下命令启动：
 
 ```bash
-kimi-config-switch
+kimi-code-switch
+```
+
+查看帮助：
+
+```bash
+kimi-code-switch --help
 ```
 
 ## 更新
+
+更新 Homebrew 索引并升级工具：
 
 ```bash
 brew update
 brew upgrade kimi-code-switch
 ```
 
-如已使用旧 alias 安装过 tap，可先移除旧 alias 后重新 tap：
+如果只想确认是否有新版本，可执行：
 
 ```bash
-brew untap tools/kimi-code-switch
-brew tap sunhaojava/kimi-code-switch git@github.com:sunhao-java/homebrew-kimi-code-switch.git
+brew livecheck kimi-code-switch
 ```
 
-## 说明
+## 卸载
 
-- 本仓库遵循 Homebrew tap 标准结构，formula 位于 `Formula/` 目录。
-- `Formula/kimi-code-switch.rb` 由主仓库的 GitHub Actions 在发布新 tag 后自动更新。
-- 首个 GitHub tag 发布完成后，自动化流程会写入首版 formula。
+卸载工具：
+
+```bash
+brew uninstall kimi-code-switch
+```
+
+如不再需要该 Tap，可继续移除：
+
+```bash
+brew untap sunhaojava/kimi-code-switch
+```
+
+## 仓库结构
+
+- `Formula/kimi-code-switch.rb`：Homebrew Formula，包含版本、下载地址、校验和、安装逻辑与测试。
+- `README.md`：安装、更新和使用说明。
+- `AGENTS.md`：仓库协作与自动化约束。
+
+## 维护说明
+
+- 新版本发布时，主要更新 `Formula/kimi-code-switch.rb` 中的版本号、下载地址和 `sha256`。
+- Formula 安装的命令名当前为 `kimi-code-switch`。
+- 发布前建议至少执行以下校验：
+
+```bash
+brew audit --strict --online Formula/kimi-code-switch.rb
+brew test kimi-code-switch
+```
+
+## 上游项目
+
+- 上游仓库：<https://github.com/sunhao-java/kimi-code-switch>
+
