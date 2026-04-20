@@ -1,12 +1,12 @@
 cask "kimi-code-switch-gui" do
   arch arm: "arm64", intel: "x64"
 
-  version "1.0.0"
+  version "1.0.1"
 
   if Hardware::CPU.arm?
-    sha256 "b3bd2c869127ec6337512d630659a1ee02e33fc29224bb6a5b72043ef519c06b"
+    sha256 "bd4487a8f9489838e874eb9c68bcb88b21fd622a7997e3ecf022c7840aebacfd"
   else
-    sha256 "19f49fb1bd9bab6b83006e4c15f97458f7a3402f1b21847f1322525956b0ad8c"
+    sha256 "40c7338fb3df3d2f10bba83705b813eb0d137875b96d0ae05c3b489f6ceae353"
   end
 
   url "https://github.com/sunhao-java/kimi-code-switch-gui/releases/download/v#{version}/kimi-code-switch-gui-#{version}-mac-#{arch}.dmg"
@@ -20,6 +20,14 @@ cask "kimi-code-switch-gui" do
   end
 
   app "Kimi Code Switch GUI.app"
+
+  caveats <<~EOS
+    If you encounter the "App is damaged" error, please run the following command:
+      sudo xattr -rd com.apple.quarantine "/Applications/Kimi Code Switch GUI.app"
+
+    Or install with the --no-quarantine flag:
+      brew install --cask --no-quarantine kimi-code-switch-gui
+  EOS
 
   zap trash: [
     "~/Library/Application Support/Kimi Code Switch GUI",
