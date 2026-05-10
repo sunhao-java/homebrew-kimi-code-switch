@@ -1,12 +1,12 @@
 cask "kimi-code-switch-gui" do
   arch arm: "arm64", intel: "x64"
 
-  version "1.1.4"
+  version "1.1.5"
 
   if Hardware::CPU.arm?
-    sha256 "8bf13817fe2ecb611e987ffdfcfad303e6fe84dbf19c46b6612423994e54db03"
+    sha256 "150bce31790726f28f7d4d2eb77e17a11965f701e4e107d60129a9446f7acff7"
   else
-    sha256 "b5868dbf46ed4841b46ee6fb4480e0bca263fc124934780a6fa1a4759df469f0"
+    sha256 "35933e0cde134ad8761046ae4725238e3fd0af19f4d2f8b253a96ba60231cefc"
   end
 
   url "https://github.com/sunhao-java/kimi-code-switch-gui/releases/download/v#{version}/kimi-code-switch-gui-#{version}-mac-#{arch}.dmg"
