@@ -13,7 +13,7 @@
 先添加 Tap：
 
 ```bash
-brew tap sunhaojava/kimi-code-switch https://github.com/sunhao-java/homebrew-kimi-code-switch.git
+brew tap sunhao-java/kimi-code-switch
 ```
 
 再安装：
@@ -70,7 +70,7 @@ brew uninstall --cask kimi-code-switch-gui
 如不再需要该 Tap，可继续移除：
 
 ```bash
-brew untap sunhaojava/kimi-code-switch
+brew untap sunhao-java/kimi-code-switch
 ```
 
 ## 仓库结构
